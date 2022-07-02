@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ndots-admission-controller:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-07-02T15:42:56.780007+02:00"
+    description: A Kubernetes Admission Controller that set ndots in Pods
+    digest: 4105ae256161160deff9dab70faf02aafa3603864e9eaaec6b52bf96ed080642
+    name: ndots-admission-controller
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/ndots-admission-controller-0.1.1/ndots-admission-controller-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-07-02T15:42:56.78002+02:00"
