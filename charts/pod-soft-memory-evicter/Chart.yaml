@@ -1,0 +1,6 @@
+apiVersion: v2
+name: pod-soft-memory-evicter
+description: Gracefully evict Kubernetes Pods before they get OOM killed 
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
