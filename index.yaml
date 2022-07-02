@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/maxlaverse/helm-charts/releases/download/ndots-admission-controller-0.1.1/ndots-admission-controller-0.1.1.tgz
     version: 0.1.1
-generated: "2022-07-02T15:42:56.78002+02:00"
+  pod-soft-memory-evicter:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-07-02T20:10:25.290401+02:00"
+    description: Gracefully evict Kubernetes Pods before they get OOM killed
+    digest: e15dced01e324918c922db561d289fdb3fc518b89ab2813473b5c12c2896348b
+    name: pod-soft-memory-evicter
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/pod-soft-memory-evicter-0.1.0/pod-soft-memory-evicter-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-07-02T20:10:25.290407+02:00"
