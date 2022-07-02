@@ -49,14 +49,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "ndots-admission-controller.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "ndots-admission-controller.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "ndots-admission-controller.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
