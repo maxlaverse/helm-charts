@@ -1,0 +1,22 @@
+# The following manifests contain a self-signed issuer CR and a certificate CR.
+# More document can be found at https://docs.cert-manager.io
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: selfsigned-issuer
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "ndots-admission-controller.fullname" . }}
+spec:
+  commonName: {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
+  dnsNames:
+  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
+  issuerRef:
+    kind: Issuer
+    name: selfsigned-issuer
+  secretName: {{ include "ndots-admission-controller.fullname" . }}-cert

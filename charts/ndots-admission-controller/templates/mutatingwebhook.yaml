@@ -1,0 +1,24 @@
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name:  {{ include "ndots-admission-controller.fullname" . }}
+  annotations:
+    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ include "ndots-admission-controller.fullname" . }}
+webhooks:
+- name: ndots.laverse.net
+  failurePolicy: Ignore
+  rules:
+  - apiGroups:   [""]
+    apiVersions: ["v1"]
+    operations:  ["CREATE"]
+    resources:   ["pods"]
+    scope:       "Namespaced"
+  clientConfig:
+    service:
+      namespace: {{ .Release.Namespace }}
+      name:  {{ include "ndots-admission-controller.fullname" . }}
+      path: "/webhook"
+  admissionReviewVersions: ["v1", "v1beta1"]
+  sideEffects: None
+  timeoutSeconds: 5
