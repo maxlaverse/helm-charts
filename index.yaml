@@ -52,4 +52,15 @@ entries:
     urls:
     - https://github.com/maxlaverse/helm-charts/releases/download/pod-soft-memory-evicter-0.1.0/pod-soft-memory-evicter-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-04T09:41:57.957924+02:00"
+  soft-pod-memory-evicter:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2022-07-04T09:51:52.018575+02:00"
+    description: Gracefully evict Kubernetes Pods before they get OOM killed
+    digest: 0bc221b5c1b6ec00909aa2a9647755c2fc7d9c75f74998f30307e3ffad5cdce3
+    name: soft-pod-memory-evicter
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/soft-pod-memory-evicter-0.1.2/soft-pod-memory-evicter-0.1.2.tgz
+    version: 0.1.2
+generated: "2022-07-04T09:51:52.018619+02:00"

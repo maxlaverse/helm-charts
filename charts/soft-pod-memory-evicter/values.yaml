@@ -1,11 +1,11 @@
-# Default values for pod-soft-memory-evicter.
+# Default values for soft-pod-memory-evicter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: maxlaverse/pod-soft-memory-evicter
+  repository: maxlaverse/soft-pod-memory-evicter
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   # tag: "main"
@@ -40,7 +40,7 @@ securityContext: {}
   # runAsUser: 1000
 
 # Additional command line flags to pass to cert-manager controller binary.
-# To see all available flags run docker run maxlaverse/pod-soft-memory-evicter:<version> --help
+# To see all available flags run docker run maxlaverse/soft-pod-memory-evicter:<version> --help
 extraArgs: []
 
 resources: {}

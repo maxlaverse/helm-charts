@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "pod-soft-memory-evicter.fullname" . }}
+  name: {{ include "soft-pod-memory-evicter.fullname" . }}
   labels:
-    {{- include "pod-soft-memory-evicter.labels" . | nindent 4 }}
+    {{- include "soft-pod-memory-evicter.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "pod-soft-memory-evicter.selectorLabels" . | nindent 6 }}
+      {{- include "soft-pod-memory-evicter.selectorLabels" . | nindent 6 }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,13 +20,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "pod-soft-memory-evicter.selectorLabels" . | nindent 8 }}
+        {{- include "soft-pod-memory-evicter.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "pod-soft-memory-evicter.serviceAccountName" . }}
+      serviceAccountName: {{ include "soft-pod-memory-evicter.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
