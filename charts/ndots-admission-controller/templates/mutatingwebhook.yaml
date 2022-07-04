@@ -5,6 +5,8 @@ metadata:
   name:  {{ include "ndots-admission-controller.fullname" . }}
   annotations:
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ include "ndots-admission-controller.fullname" . }}
+  labels:
+    {{- include "ndots-admission-controller.labels" . | nindent 4 }}
 webhooks:
 - name: ndots.laverse.net
   failurePolicy: Ignore
