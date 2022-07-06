@@ -19,6 +19,7 @@ rules:
   - ""
   resources:
   - pods/eviction
+  - events
   verbs:
   - create
 - apiGroups:
