@@ -1,0 +1,15 @@
+{{- if .Values.podDisruptionBudget -}}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "soft-pod-memory-evicter.fullname" . }}
+  labels:
+    {{- include "soft-pod-memory-evicter.labels" . | nindent 4 }}
+spec:
+{{- if .Values.podDisruptionBudget }}
+  {{ toYaml .Values.podDisruptionBudget | nindent 2 }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "soft-pod-memory-evicter.selectorLabels" . | nindent 6 }}
+{{- end -}}
