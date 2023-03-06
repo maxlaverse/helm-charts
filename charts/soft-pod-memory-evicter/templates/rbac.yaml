@@ -19,9 +19,15 @@ rules:
   - ""
   resources:
   - pods/eviction
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  resources:
   - events
   verbs:
   - create
+  - patch
 - apiGroups:
   - metrics.k8s.io
   resources:
