@@ -3,6 +3,16 @@ entries:
   ndots-admission-controller:
   - apiVersion: v2
     appVersion: 0.2.0
+    created: "2023-11-11T17:30:24.274422+01:00"
+    description: A Kubernetes Admission Controller that set ndots in Pods
+    digest: 3b0c700daabd56119292781382057db87674cee0b82e6c3e045e3a7051b2d820
+    name: ndots-admission-controller
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/ndots-admission-controller-0.1.6/ndots-admission-controller-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 0.2.0
     created: "2023-03-06T14:01:51.484755+01:00"
     description: A Kubernetes Admission Controller that set ndots in Pods
     digest: fcc71656f4d55856bcd9609b9e93c29db2716a07109768acc12e619773f357ac
@@ -74,6 +84,16 @@ entries:
     version: 0.1.0
   soft-pod-memory-evicter:
   - apiVersion: v2
+    appVersion: 0.1.5
+    created: "2023-04-21T19:29:21.640765+02:00"
+    description: Gracefully evict Kubernetes Pods before they get OOM killed
+    digest: 86209e148ad3264a0344046889b784f734017c0e4147b3d653b13740865008be
+    name: soft-pod-memory-evicter
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/soft-pod-memory-evicter-0.1.8/soft-pod-memory-evicter-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
     appVersion: 0.1.4
     created: "2023-03-06T15:11:52.104677+01:00"
     description: Gracefully evict Kubernetes Pods before they get OOM killed
@@ -133,15 +153,4 @@ entries:
     urls:
     - https://github.com/maxlaverse/helm-charts/releases/download/soft-pod-memory-evicter-0.1.2/soft-pod-memory-evicter-0.1.2.tgz
     version: 0.1.2
-  - apiVersion: v2
-    appVersion: 0.1.5
-    created: "2023-04-21T19:29:21.640765+02:00"
-    description: Gracefully evict Kubernetes Pods before they get OOM killed
-    digest: 86209e148ad3264a0344046889b784f734017c0e4147b3d653b13740865008be
-    name: soft-pod-memory-evicter
-    type: application
-    urls:
-    - https://github.com/maxlaverse/helm-charts/releases/download/soft-pod-memory-evicter-0.1.8/soft-pod-memory-evicter-0.1.8.tgz
-    version: 0.1.8
-generated: "2023-04-21T19:29:21.640779+02:00"
-
+generated: "2023-11-11T17:30:24.274535+01:00"

@@ -13,5 +13,5 @@ helm repo update
 ```bash
 cr package charts/soft-pod-memory-evicter
 cr upload  --owner maxlaverse  --git-repo helm-charts --token <token>
-cr index  --owner maxlaverse  --git-repo helm-charts --token <token> -i ./
+cr index  --owner maxlaverse  --git-repo helm-charts --token <token> --pages-branch main -i ./
 ```

@@ -9,7 +9,7 @@ metadata:
     {{- include "ndots-admission-controller.labels" . | nindent 4 }}
 webhooks:
 - name: ndots.laverse.net
-  failurePolicy: Ignore
+  failurePolicy: {{ .Values.failurePolicy }}
   rules:
   - apiGroups:   [""]
     apiVersions: ["v1"]

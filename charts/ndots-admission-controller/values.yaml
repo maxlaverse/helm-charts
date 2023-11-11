@@ -14,6 +14,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+failurePolicy: Ignore
+
 podAnnotations: {}
 
 podSecurityContext: {}
@@ -56,3 +58,4 @@ affinity: {}
 
 # podDisruptionBudget:
 #   maxUnavailable: 1
+
