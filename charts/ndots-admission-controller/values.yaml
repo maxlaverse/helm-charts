@@ -10,6 +10,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   # tag: "main"
 
+certificate:
+  duration: 8760h0m0s
+  # Uncomment the following lines to use an existing certificate Issuer
+  # issuerRef:
+  #   kind: ClusterIssuer
+  #   name: selfsigned-ca
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

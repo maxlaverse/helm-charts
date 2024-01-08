@@ -1,13 +1,15 @@
 # The following manifests contain a self-signed issuer CR and a certificate CR.
 # More document can be found at https://docs.cert-manager.io
+{{- if not (hasKey .Values.certificate "issuerRef") }}
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: selfsigned-issuer
+  name: ndots-admission-controller
   labels:
     {{- include "ndots-admission-controller.labels" . | nindent 4 }}
 spec:
   selfSigned: {}
+{{- end }}
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -16,11 +18,16 @@ metadata:
   labels:
     {{- include "ndots-admission-controller.labels" . | nindent 4 }}
 spec:
+  duration: "{{ .Values.certificate.duration }}"
   commonName: {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   dnsNames:
   - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
   - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   issuerRef:
+    {{- if .Values.certificate.issuerRef }}
+    {{ toYaml .Values.certificate.issuerRef | nindent 4 }}
+    {{- else }}
     kind: Issuer
-    name: selfsigned-issuer
+    name: ndots-admission-controller
+    {{- end }}
   secretName: {{ include "ndots-admission-controller.fullname" . }}-cert
