@@ -53,7 +53,7 @@ spec:
               scheme: HTTPS
           volumeMounts:
           - name: certs
-            mountPath: "/etc/certs"
+            mountPath: "/certs"
             readOnly: true
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
