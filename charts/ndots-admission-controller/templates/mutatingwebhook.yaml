@@ -4,7 +4,11 @@ kind: MutatingWebhookConfiguration
 metadata:
   name:  {{ include "ndots-admission-controller.fullname" . }}
   annotations:
+    {{- if .Values.certificate.issuerRef }}
+    cert-manager.io/inject-ca-from: {{ .Values.certificate.issuerRef.namespace}}/{{ .Values.certificate.issuerRef.name}}
+    {{- else }}
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ include "ndots-admission-controller.fullname" . }}
+    {{- end }}
   labels:
     {{- include "ndots-admission-controller.labels" . | nindent 4 }}
 webhooks:
