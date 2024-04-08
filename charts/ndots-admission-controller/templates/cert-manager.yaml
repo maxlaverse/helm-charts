@@ -24,10 +24,6 @@ spec:
   - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
   - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   issuerRef:
-    {{- if .Values.certificate.issuerRef }}
-    {{ toYaml .Values.certificate.issuerRef | nindent 4 }}
-    {{- else }}
-    kind: Issuer
-    name: ndots-admission-controller
-    {{- end }}
+    kind: {{ default "Issuer" (.Values.certificate.issuerRef).kind }}
+    name: {{ default "ndots-admission-controller" (.Values.certificate.issuerRef).name }}
   secretName: {{ include "ndots-admission-controller.fullname" . }}-cert
