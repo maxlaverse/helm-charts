@@ -5,6 +5,9 @@ metadata:
   name:  {{ include "ndots-admission-controller.fullname" . }}
   annotations:
     {{- if .Values.certificate.issuerRef }}
+    {{- if or (not (hasKey .Values.certificate.issuerRef "namespace")) (not (hasKey .Values.certificate.issuerRef "name")) }}
+    {{ fail "both certificate.issuerRef.namespace and certificate.issuerRef.name must be set" }}
+    {{- end }}
     cert-manager.io/inject-ca-from: {{ .Values.certificate.issuerRef.namespace}}/{{ .Values.certificate.issuerRef.name}}
     {{- else }}
     cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ include "ndots-admission-controller.fullname" . }}
