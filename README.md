@@ -10,6 +10,9 @@ helm repo update
 ```
 
 ## How to release
+Bump version in `Chart.yaml`.
+
+Then:
 ```bash
 rm .cr-release-packages/*
 cr package charts/soft-pod-memory-evicter
