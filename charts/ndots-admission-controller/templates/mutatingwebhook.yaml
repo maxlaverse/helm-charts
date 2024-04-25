@@ -17,6 +17,12 @@ metadata:
 webhooks:
 - name: ndots.laverse.net
   failurePolicy: {{ .Values.failurePolicy }}
+  objectSelector:
+    matchExpressions:
+    - key: app.kubernetes.io/name
+      operator: NotIn
+      values:
+      - ndots-admission-controller
   rules:
   - apiGroups:   [""]
     apiVersions: ["v1"]
