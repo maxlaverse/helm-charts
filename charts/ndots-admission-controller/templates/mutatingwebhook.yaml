@@ -19,10 +19,10 @@ webhooks:
   failurePolicy: {{ .Values.failurePolicy }}
   objectSelector:
     matchExpressions:
-    - key: app.kubernetes.io/name
+    - key: ndots.laverse.net/ignore
       operator: NotIn
       values:
-      - ndots-admission-controller
+      - "true"
   rules:
   - apiGroups:   [""]
     apiVersions: ["v1"]
