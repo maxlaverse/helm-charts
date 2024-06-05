@@ -21,8 +21,8 @@ spec:
   duration: "{{ .Values.certificate.duration }}"
   commonName: {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   dnsNames:
-  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
-  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
+  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.cluster-domain }}
+  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.cluster-domain }}
   issuerRef:
     kind: {{ default "Issuer" (.Values.certificate.issuerRef).kind }}
     name: {{ default "ndots-admission-controller" (.Values.certificate.issuerRef).name }}
