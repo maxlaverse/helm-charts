@@ -22,7 +22,7 @@ spec:
   commonName: {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   dnsNames:
   - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.cluster-domain }}
-  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc.{{ .Values.cluster-domain }}
+  - {{ include "ndots-admission-controller.fullname" . }}.{{ .Release.Namespace }}.svc
   issuerRef:
     kind: {{ default "Issuer" (.Values.certificate.issuerRef).kind }}
     name: {{ default "ndots-admission-controller" (.Values.certificate.issuerRef).name }}
