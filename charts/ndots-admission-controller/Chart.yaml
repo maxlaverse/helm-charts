@@ -2,5 +2,5 @@ apiVersion: v2
 name: ndots-admission-controller
 description: A Kubernetes Admission Controller that set ndots in Pods
 type: application
-version: 0.1.13
+version: 0.1.14
 appVersion: "0.3.1"
