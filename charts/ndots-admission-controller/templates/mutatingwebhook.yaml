@@ -17,6 +17,9 @@ metadata:
 webhooks:
 - name: ndots.laverse.net
   failurePolicy: {{ .Values.failurePolicy }}
+{{- if .Values.namespaceSelector }}
+  {{ toYaml .Values.namespaceSelector | nindent 2 }}
+{{- end }}
   objectSelector:
     matchExpressions:
     - key: ndots.laverse.net/ignore

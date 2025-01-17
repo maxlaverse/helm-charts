@@ -59,6 +59,12 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+namespaceSelector:
+  matchExpressions:
+  - key: kubernetes.io/metadata.name
+    operator: NotIn
+    values:
+    - kube-system
 
 nodeSelector: {}
 
