@@ -8,10 +8,17 @@ metadata:
     {{- include "soft-pod-memory-evicter.labels" . | nindent 4 }}
 rules:
 - apiGroups:
+  - policy
+  resources:
+  - poddisruptionbudgets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
   - ""
   resources:
   - pods
-  - poddisruptionbudgets
   verbs:
   - get
   - list
