@@ -18,7 +18,8 @@ webhooks:
 - name: ndots.laverse.net
   failurePolicy: {{ .Values.failurePolicy }}
 {{- if .Values.namespaceSelector }}
-  {{ toYaml .Values.namespaceSelector | nindent 2 }}
+  namespaceSelector:
+    {{- toYaml .Values.namespaceSelector | nindent 4 }}
 {{- end }}
   objectSelector:
     matchExpressions:
