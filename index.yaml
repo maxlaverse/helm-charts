@@ -12,6 +12,16 @@ entries:
     - https://github.com/maxlaverse/helm-charts/releases/download/ndots-admission-controller-0.5.0/ndots-admission-controller-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2026-05-03T15:02:51.98111+02:00"
+    description: A Kubernetes Admission Controller that set ndots in Pods
+    digest: 685aac09f1e9b2a72887afd6f429408387bffac307d7455d21d4bdc084c294ee
+    name: ndots-admission-controller
+    type: application
+    urls:
+    - https://github.com/maxlaverse/helm-charts/releases/download/ndots-admission-controller-0.5.0-2/ndots-admission-controller-0.5.0-2.tgz
+    version: 0.5.0-2
+  - apiVersion: v2
     appVersion: 0.4.0
     created: "2025-01-17T16:51:29.243858+01:00"
     description: A Kubernetes Admission Controller that set ndots in Pods
@@ -283,4 +293,4 @@ entries:
     urls:
     - https://github.com/maxlaverse/helm-charts/releases/download/soft-pod-memory-evicter-0.1.2/soft-pod-memory-evicter-0.1.2.tgz
     version: 0.1.2
-generated: "2026-01-04T16:20:24.399723+01:00"
+generated: "2026-05-03T15:02:51.981247+02:00"
